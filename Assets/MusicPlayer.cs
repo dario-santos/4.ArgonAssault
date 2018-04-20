@@ -7,10 +7,14 @@ public class MusicPlayer : MonoBehaviour {
 
 	[SerializeField]private float waitTime = 5f;
 
+
+	void Awake()
+	{
+		DontDestroyOnLoad(this.gameObject);
+	}
 	// Use this for initialization
 	void Start () {
 		Invoke("LoadFirstScene", waitTime);
-		DontDestroyOnLoad(this.gameObject);
 	}
 	
 	private void LoadFirstScene() 
